@@ -10,7 +10,7 @@ const users = (state = initialState , action)=>{
         return {...state, loading : true}
 
         case "GET_USERS_SUCESS" : 
-        return {...state, loading : false}
+        return {...state, loading : false , users:action.users}
 
         case "GET_USERS_FAILED" : 
         return {...state, loading : false , error : action.message}

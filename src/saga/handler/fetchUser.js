@@ -3,10 +3,10 @@ import fetchUsers from '.././request/fetchUsers'
 
 function* handleUsers(){
     try{
-        const user = yield call(fetchUsers)
-        yield put({type : "GET_USERS_SUCESS" , user : user})
-    }catch(err){
-        yield put({type : "GET_USER_FAILED", message : err.message})
+        const users = yield call(fetchUsers)
+        yield put({type : "GET_USERS_SUCESS" , users : users})
+    }catch(error){
+        yield put({type : "GET_USER_FAILED", message : error.message})
     }
 }
 
