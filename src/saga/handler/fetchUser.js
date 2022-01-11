@@ -4,14 +4,14 @@ import fetchUsers from '.././request/fetchUsers'
 function* handleUsers(){
     try{
         const user = yield call(fetchUsers)
-        yield put({type : "GET_USER_SUCESS" , user : user})
+        yield put({type : "GET_USERS_SUCESS" , user : user})
     }catch(err){
         yield put({type : "GET_USER_FAILED", message : err.message})
     }
 }
 
 function* watcherUserSaga(){
-    yield takeEvery("GET_USER_REQUESTED", handleUsers)
+    yield takeEvery("GET_USERS_REQUESTED", handleUsers)
 }
 
 export default watcherUserSaga

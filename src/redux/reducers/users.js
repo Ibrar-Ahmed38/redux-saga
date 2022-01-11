@@ -6,13 +6,13 @@ const initialState = {
 
 const users = (state = initialState , action)=>{
     switch(action.type){
-        case  "GET_USER_REQUESTED" : 
+        case  "GET_USERS_REQUESTED" : 
         return {...state, loading : true}
 
-        case "GET_USER_SUCESS" : 
+        case "GET_USERS_SUCESS" : 
         return {...state, loading : false}
 
-        case "GET_USER_FAILED" : 
+        case "GET_USERS_FAILED" : 
         return {...state, loading : false , error : action.message}
         
         default : 
